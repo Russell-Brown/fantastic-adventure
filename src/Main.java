@@ -35,13 +35,13 @@ public class Main
                     double height = fileReader.nextDouble();
                     double weight = fileReader.nextDouble();
                     Person inputPersonSort = new Person(name, height, weight);
-                    sortedSet.personAdd(inputPersonSort);
+                    //TODO sortedSet.personAdd(inputPersonSort);
                 }
                 System.out.println(); //these two blank prints are for readability.
-                System.out.print(sortedSet);
+                //TODO System.out.print(sortedSet);
                 System.out.println(); // " "
                 System.out.println("\nCreating Output Files..."); // \n for spacing
-                orderedSetWriter.write(sortedSet.toString());
+                //TODO orderedSetWriter.write(sortedSet.toString());
                 orderedSetWriter.close();
             }
             catch(IOException e)
