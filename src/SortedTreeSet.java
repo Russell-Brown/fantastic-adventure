@@ -1,6 +1,5 @@
 public class SortedTreeSet implements SortedTreeSetInterface
 {
-
     private Person person;
     private SortedTreeSet left;
     private SortedTreeSet right;
@@ -10,6 +9,8 @@ public class SortedTreeSet implements SortedTreeSetInterface
         return this.person;
     }
 
+    //I saw code written like this, looked more compact so I tried it out, lmk if this
+    // isnt correct.
     public boolean hasLeft()
     {
         if(this.left != null){ return true;}
@@ -93,5 +94,35 @@ public class SortedTreeSet implements SortedTreeSetInterface
         //Third case is if the compareTo == 0, so do nothing because that's a duplicate.
 
     }//add()
+
+    @Override
+    public String toString()
+    {
+
+        StringBuilder result = new StringBuilder();
+
+        //If this tree has literally nothing.
+        if (this.person == null)
+        {
+            return "Tree is empty";
+        }
+
+        //if left node exists, recursively call and append to the stringbuilder
+        if(this.left != null)
+        {
+          result.append(this.left.toString());
+        }
+
+        //append this.person's toString()
+        result.append(this.person.toString());
+
+        //if this.right exists, recursively append to the StringBuilder
+        if(this.right != null)
+        {
+            result.append(this.right.toString());
+        }
+
+        return result.toString();
+    }
 
 }//SortedTreeSet

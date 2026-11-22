@@ -12,9 +12,10 @@ public class Main
 {
     public static void main(String[] args)
     {
+
         Person Maxwell = new Person("Maxwell", 167, 98.4); //test
 
-        //PersonSetOrdered sortedSet = new PersonSetOrdered(); REPLACE W TREE
+        SortedTreeSet sortedSet = new SortedTreeSet();
 
         //Tries to find hr.txt, then tries to create the output files for both sets.
         try
@@ -35,13 +36,13 @@ public class Main
                     double height = fileReader.nextDouble();
                     double weight = fileReader.nextDouble();
                     Person inputPersonSort = new Person(name, height, weight);
-                    //TODO sortedSet.personAdd(inputPersonSort);
+                    sortedSet.add(inputPersonSort);
                 }
                 System.out.println(); //these two blank prints are for readability.
-                //TODO System.out.print(sortedSet);
+                System.out.print(sortedSet.toString());
                 System.out.println(); // " "
                 System.out.println("\nCreating Output Files..."); // \n for spacing
-                //TODO orderedSetWriter.write(sortedSet.toString());
+                orderedSetWriter.write(sortedSet.toString());
                 orderedSetWriter.close();
             }
             catch(IOException e)
